@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LinkCard from '../components/LinkCard.astro';
-import { getSiteData } from '../lib/data';
+import { getSiteData, type SiteData } from '../lib/data';
 
-const data = getSiteData();
+const data: SiteData = getSiteData();
 const { profile, philosophy, links } = data;
 ---
 

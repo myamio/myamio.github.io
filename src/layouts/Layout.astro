@@ -4,6 +4,7 @@ import { getSiteData } from '../lib/data';
 
 const data = getSiteData();
 const { title, description, language } = data.seo;
+const ogImage = new URL(data.profile.avatar, Astro.site);
 ---
 
 <!doctype html>
@@ -17,7 +18,12 @@ const { title, description, language } = data.seo;
 		<meta name="description" content={description} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
 		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 		<!-- Japanese Font Support -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,17 +37,6 @@ const { title, description, language } = data.seo;
 </html>
 
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
 	html {
 		scroll-behavior: smooth;
 	}
