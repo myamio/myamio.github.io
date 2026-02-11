@@ -1,0 +1,47 @@
+---
+interface Props {
+	title: string;
+	url: string | null;
+	description: string;
+	icon: string;
+}
+
+const { title, url, description, icon } = Astro.props;
+const isLink = url !== null;
+---
+
+<div class="group relative block rounded-lg border border-gray-200 p-6 transition-all hover:border-black hover:shadow-sm">
+	{isLink ? (
+		<a href={url} target="_blank" rel="noopener noreferrer" class="absolute inset-0">
+			<span class="sr-only">{title}</span>
+		</a>
+	) : (
+		<span class="absolute right-3 top-3 rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-600">
+			Coming Soon
+		</span>
+	)}
+
+	<div class="flex items-center space-x-4">
+		<div class="flex-shrink-0 text-gray-700 group-hover:text-black">
+			{icon === 'github' && (
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+			)}
+			{icon === 'x' && (
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6 0h2.454l-5.36 6.142L16 16h-4.937l-3.867-5.07L2.772 16H.316l5.733-6.57L0 0h5.063l3.495 4.633L12.6 0zm-.86 14.713h1.359L4.354 1.248H2.896l8.844 13.465z"/></svg>
+			)}
+			{icon === 'zenn' && (
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.0001 2.00006L2.00006 4.00006L4.00006 12.0001L2.00006 20.0001L12.0001 22.0001L22.0001 20.0001L20.0001 12.0001L22.0001 4.00006L12.0001 2.00006ZM12.0001 16.0001C9.79092 16.0001 8.00006 14.2092 8.00006 12.0001C8.00006 9.79092 9.79092 8.00006 12.0001 8.00006C14.2092 8.00006 16.0001 9.79092 16.0001 12.0001C16.0001 14.2092 14.2092 16.0001 12.0001 16.0001Z" fill="currentColor"/></svg>
+			)}
+			{icon === 'note' && (
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C15.31 6 18 8.69 18 12C18 15.31 15.31 18 12 18Z" fill="currentColor"/></svg>
+			)}
+			{icon === 'project' && (
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+			)}
+		</div>
+		<div>
+			<h3 class="font-bold text-gray-900">{title}</h3>
+			<p class="text-sm text-gray-600 leading-relaxed">{description}</p>
+		</div>
+	</div>
+</div>
