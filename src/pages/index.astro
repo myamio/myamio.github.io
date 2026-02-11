@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkCard from '../components/LinkCard.astro';
+import { getSiteData, type SiteData } from '../lib/data';
+
+const data: SiteData = getSiteData();
+const { profile, philosophy, links } = data;
+---
+
+<Layout>
+	<header class="mb-16 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
+		<div class="mb-6 sm:mb-0 sm:mr-8">
+			<div class="h-24 w-24 overflow-hidden rounded-full border border-gray-100 bg-gray-50 shadow-sm">
+				<img
+					src={profile.avatar}
+					alt={profile.name}
+					class="h-full w-full object-cover"
+					onerror="this.src='https://ui-avatars.com/api/?name=myamio&background=f3f4f6&color=374151'"
+				/>
+			</div>
+		</div>
+		<div class="flex-1">
+			<h1 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{profile.name}</h1>
+			<p class="mb-4 text-lg font-medium text-gray-600">{profile.title}</p>
+			<p class="max-w-md text-gray-600 leading-relaxed">
+				{profile.intro}
+			</p>
+		</div>
+	</header>
+
+	<section class="mb-16">
+		<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-400">Development Philosophy</h2>
+		<div class="rounded-lg bg-gray-50 p-8 text-center border border-gray-100">
+			<p class="text-2xl font-bold italic tracking-tighter text-gray-900 sm:text-3xl">
+				"{philosophy.keyword}"
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-400">Links & Projects</h2>
+		<div class="grid gap-4 sm:grid-cols-1">
+			{links.map((link) => (
+				<LinkCard {...link} />
+			))}
+		</div>
+	</section>
+
+	<footer class="mt-24 text-center">
+		<p class="text-xs text-gray-400">
+			&copy; {new Date().getFullYear()} {profile.name}. Built with Astro & Tailwind CSS.
+		</p>
+	</footer>
+</Layout>

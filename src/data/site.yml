@@ -1,0 +1,35 @@
+profile:
+  name: "myamio"
+  title: "Web Full Stack Engineer"
+  intro: "Stateless & Minimalist な設計を好むフルスタックエンジニアです。"
+  avatar: "/avatar.png"
+
+philosophy:
+  keyword: "Stateless & Minimalist"
+
+links:
+  - title: "GitHub"
+    url: "https://github.com/myamio"
+    description: "ソースコードの管理と公開"
+    icon: "github"
+  - title: "Zenn"
+    url: "https://zenn.dev/myamio"
+    description: "技術記事の執筆"
+    icon: "zenn"
+  - title: "note"
+    url: "https://note.com/myamio"
+    description: "日常の思考や活動記録"
+    icon: "note"
+  - title: "X"
+    url: "https://x.com/myaamioo"
+    description: "最新情報の告知とつぶやき"
+    icon: "x"
+  - title: "Markdown Conversion SaaS"
+    url: null
+    description: "Markdown変換ツールの開発中"
+    icon: "project"
+
+seo:
+  title: "myamioポータル"
+  description: "myamioのポートフォリオ兼ポータルサイト"
+  language: "ja"
