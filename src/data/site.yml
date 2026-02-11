@@ -22,7 +22,7 @@ links:
     icon: "note"
   - title: "X"
     url: "https://x.com/myaamioo"
-    description: "最新情報の告知とつぶやき"
+    description: "最新情報の告知"
     icon: "x"
   - title: "Markdown Conversion SaaS"
     url: null
