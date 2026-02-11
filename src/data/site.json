@@ -1,0 +1,35 @@
+{
+  "name": "myamio",
+  "title": "myamio's Portfolio",
+  "description": "Web Full Stack Engineer",
+  "philosophy": "Stateless & Minimalist",
+  "links": [
+    {
+      "title": "GitHub",
+      "url": "https://github.com/myamio",
+      "description": "Source Code & Projects"
+    },
+    {
+      "title": "Zenn",
+      "url": "https://zenn.dev/myamio",
+      "description": "技術発信の拠点"
+    },
+    {
+      "title": "note",
+      "url": "https://note.com/myamio",
+      "description": "技術発信の拠点"
+    },
+    {
+      "title": "X",
+      "url": "https://x.com/myamio",
+      "description": "告知用"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Markdown Conversion SaaS",
+      "description": "開発中",
+      "url": "#"
+    }
+  ]
+}

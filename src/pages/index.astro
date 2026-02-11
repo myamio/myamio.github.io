@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LinkCard from '../components/LinkCard.astro';
+import siteData from '../data/site.json';
+---
+
+<Layout title={siteData.title}>
+	<main class="max-w-2xl mx-auto px-6 py-12 lg:py-24">
+		<header class="mb-16">
+			<h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+				{siteData.name}
+			</h1>
+			<p class="mt-4 text-lg text-gray-600">
+				{siteData.description}
+			</p>
+		</header>
+
+		<section class="mb-16">
+			<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Links</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+				{siteData.links.map((link) => (
+					<LinkCard title={link.title} url={link.url} description={link.description} />
+				))}
+			</div>
+		</section>
+
+		<section class="mb-16">
+			<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Projects</h2>
+			<div class="grid grid-cols-1 gap-4">
+				{siteData.projects.map((project) => (
+					<LinkCard title={project.title} url={project.url} description={project.description} />
+				))}
+			</div>
+		</section>
+
+		<section class="border-t border-gray-100 pt-16">
+			<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Philosophy</h2>
+			<p class="text-xl font-medium text-gray-800">
+				"{siteData.philosophy}"
+			</p>
+		</section>
+
+		<footer class="mt-32 pb-8 text-sm text-gray-400">
+			&copy; {new Date().getFullYear()} {siteData.name}
+		</footer>
+	</main>
+</Layout>
