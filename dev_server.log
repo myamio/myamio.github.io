@@ -2,14 +2,19 @@
 > app@0.0.1 dev
 > astro dev
 
-22:06:51 [types] Generated 1ms
-22:06:52 [content] Syncing content
-22:06:52 [content] Synced content
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
 
- astro  v5.17.2 ready in 540 ms
+01:21:12 [types] Generated 0ms
+01:21:12 [content] Syncing content
+01:21:12 [content] Synced content
+
+ astro  v5.17.2 ready in 373 ms
 
 ┃ Local    http://localhost:4321/
 ┃ Network  use --host to expose
 
-22:06:52 watching for file changes...
-22:06:57 [200] / 69ms
+01:21:12 watching for file changes...
+01:22:01 [200] / 87ms
