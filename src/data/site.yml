@@ -16,6 +16,10 @@ links:
     url: "https://zenn.dev/myamio"
     description: "技術記事の執筆"
     icon: "zenn"
+  - title: "Qiita"
+    url: "https://qiita.com/myamio"
+    description: "技術記事の執筆"
+    icon: "qiita"
   - title: "note"
     url: "https://note.com/myamio"
     description: "日常の思考や活動記録"
@@ -28,10 +32,6 @@ links:
     url: "https://x.com/myaamioo"
     description: "最新情報の告知"
     icon: "x"
-  - title: "Markdown Conversion SaaS"
-    url: null
-    description: "Markdown変換ツールの開発中"
-    icon: "project"
 
 seo:
   title: "myamioポータル"
