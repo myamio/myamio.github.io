@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LinkCard from '../components/LinkCard.astro';
+import GameOfLife from '../components/GameOfLife.astro';
 import { getSiteData, type SiteData } from '../lib/data';
 
 const data: SiteData = getSiteData();
-const { profile, philosophy, links } = data;
+const { profile, links } = data;
 ---
 
 <Layout>
@@ -29,11 +30,8 @@ const { profile, philosophy, links } = data;
 	</header>
 
 	<section class="mb-16">
-		<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-400">Development Philosophy</h2>
-		<div class="rounded-lg bg-gray-50 p-8 text-center border border-gray-100">
-			<p class="text-2xl font-bold italic tracking-tighter text-gray-900 sm:text-3xl">
-				"{philosophy.keyword}"
-			</p>
+		<div class="h-40 w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+			<GameOfLife />
 		</div>
 	</section>
 

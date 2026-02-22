@@ -1,0 +1,111 @@
+<div id="game-of-life-container" class="w-full h-full overflow-hidden relative bg-gray-50">
+  <canvas id="game-of-life-canvas" class="absolute inset-0 w-full h-full block"></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById('game-of-life-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  if (canvas && ctx) {
+    let animationId: number;
+    let grid: number[][] = [];
+    let cols: number;
+    let rows: number;
+    const cellSize = 10; // Size of each cell in pixels
+    const frameRate = 10; // Frames per second
+    let lastTime = 0;
+
+    // Colors matching the site theme
+    // bg-gray-50 is #f9fafb
+    // text-gray-300 for cells (light gray) or maybe a bit darker like gray-400 (#9ca3af)
+    const deadColor = '#f9fafb';
+    const liveColor = '#d1d5db'; // gray-300
+
+    function setup() {
+      resize();
+      window.addEventListener('resize', resize);
+      requestAnimationFrame(loop);
+    }
+
+    function resize() {
+      const container = canvas.parentElement;
+      if (container) {
+        canvas.width = container.clientWidth;
+        canvas.height = container.clientHeight;
+
+        cols = Math.ceil(canvas.width / cellSize);
+        rows = Math.ceil(canvas.height / cellSize);
+
+        initGrid();
+      }
+    }
+
+    function initGrid() {
+      grid = new Array(cols).fill(null).map(() =>
+        new Array(rows).fill(null).map(() => Math.random() > 0.85 ? 1 : 0) // Sparse population for minimalist look
+      );
+    }
+
+    function draw() {
+      ctx.fillStyle = deadColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = liveColor;
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          if (grid[i][j] === 1) {
+            ctx.fillRect(i * cellSize, j * cellSize, cellSize - 1, cellSize - 1);
+          }
+        }
+      }
+    }
+
+    function update() {
+      const nextGrid = grid.map(arr => [...arr]);
+
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          const state = grid[i][j];
+          let neighbors = 0;
+
+          // Count neighbors
+          for (let x = -1; x < 2; x++) {
+            for (let y = -1; y < 2; y++) {
+              if (x === 0 && y === 0) continue;
+
+              const col = (i + x + cols) % cols;
+              const row = (j + y + rows) % rows;
+
+              neighbors += grid[col][row];
+            }
+          }
+
+          // Apply rules
+          if (state === 0 && neighbors === 3) {
+            nextGrid[i][j] = 1;
+          } else if (state === 1 && (neighbors < 2 || neighbors > 3)) {
+            nextGrid[i][j] = 0;
+          } else {
+            nextGrid[i][j] = state;
+          }
+        }
+      }
+
+      grid = nextGrid;
+    }
+
+    function loop(currentTime: number) {
+      if (currentTime - lastTime >= 1000 / frameRate) {
+        update();
+        draw();
+        lastTime = currentTime;
+      }
+      animationId = requestAnimationFrame(loop);
+    }
+
+    setup();
+
+    // Cleanup on navigation (optional if using View Transitions or SPA router, but good practice)
+    // Astro's default is MPA, so this script runs fresh on page load.
+  }
+</script>
