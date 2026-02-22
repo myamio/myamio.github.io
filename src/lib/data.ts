@@ -9,9 +9,6 @@ export interface SiteData {
     intro: string;
     avatar: string;
   };
-  philosophy: {
-    keyword: string;
-  };
   links: {
     title: string;
     url: string | null;

@@ -1,11 +1,8 @@
 profile:
   name: "myamio"
-  title: "Web Full Stack Engineer"
-  intro: "Stateless & Minimalist な設計を好むフルスタックエンジニアです。"
+  title: "Full Stack Engineer"
+  intro: "ステートレスな設計を好むフルスタックエンジニアです。"
   avatar: "/avatar.png"
-
-philosophy:
-  keyword: "Stateless & Minimalist"
 
 links:
   - title: "GitHub"
