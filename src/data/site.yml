@@ -4,9 +4,6 @@ profile:
   intro: "ステートレスな設計を好むフルスタックエンジニアです。"
   avatar: "/avatar.png"
 
-philosophy:
-  keyword: "Stateless & Minimalist"
-
 links:
   - title: "GitHub"
     url: "https://github.com/myamio"
