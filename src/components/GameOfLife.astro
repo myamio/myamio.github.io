@@ -7,13 +7,14 @@
   const ctx = canvas.getContext('2d');
 
   if (canvas && ctx) {
-    let animationId: number;
+    let animationId: number = 0;
     let grid: number[][] = [];
     let cols: number;
     let rows: number;
     const cellSize = 10; // Size of each cell in pixels
     const frameRate = 10; // Frames per second
     let lastTime = 0;
+    let isVisible = false;
 
     // Colors matching the site theme
     // bg-gray-50 is #f9fafb
@@ -24,7 +25,26 @@
     function setup() {
       resize();
       window.addEventListener('resize', resize);
-      requestAnimationFrame(loop);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            isVisible = true;
+            if (!animationId) {
+              lastTime = performance.now();
+              loop(lastTime);
+            }
+          } else {
+            isVisible = false;
+            if (animationId) {
+              cancelAnimationFrame(animationId);
+              animationId = 0;
+            }
+          }
+        });
+      }, { threshold: 0 });
+
+      observer.observe(canvas);
     }
 
     function resize() {
@@ -95,6 +115,8 @@
     }
 
     function loop(currentTime: number) {
+      if (!isVisible) return;
+
       if (currentTime - lastTime >= 1000 / frameRate) {
         update();
         draw();
@@ -104,8 +126,5 @@
     }
 
     setup();
-
-    // Cleanup on navigation (optional if using View Transitions or SPA router, but good practice)
-    // Astro's default is MPA, so this script runs fresh on page load.
   }
 </script>
