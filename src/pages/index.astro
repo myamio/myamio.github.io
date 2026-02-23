@@ -33,23 +33,25 @@ const { profile, links } = data;
 		</div>
 	</header>
 
-	<section class="mb-16">
-		<div class="h-40 w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
-			<GameOfLife />
-		</div>
-	</section>
+	<main>
+		<section class="mb-16">
+			<div class="h-40 w-full overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+				<GameOfLife />
+			</div>
+		</section>
 
-	<section>
-		<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-400">Links & Projects</h2>
-		<div class="grid gap-4 sm:grid-cols-1">
-			{links.map((link) => (
-				<LinkCard {...link} />
-			))}
-		</div>
-	</section>
+		<section>
+			<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Links & Projects</h2>
+			<div class="grid gap-4 sm:grid-cols-1">
+				{links.map((link) => (
+					<LinkCard {...link} />
+				))}
+			</div>
+		</section>
+	</main>
 
 	<footer class="mt-24 text-center">
-		<p class="text-xs text-gray-400">
+		<p class="text-xs text-gray-500">
 			&copy; {new Date().getFullYear()} {profile.name}. Built with Astro & Tailwind CSS.
 		</p>
 	</footer>
