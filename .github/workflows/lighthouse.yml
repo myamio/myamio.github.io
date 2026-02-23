@@ -1,0 +1,50 @@
+name: Lighthouse Score
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to audit'
+        required: true
+        default: 'https://myamio.github.io'
+
+jobs:
+  lighthouse:
+    # Run only on successful deployment to github-pages OR manual dispatch
+    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'github-pages')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Run Lighthouse
+        id: lighthouse
+        run: |
+          URL="${{ github.event.deployment_status.target_url || github.event.inputs.url }}"
+          echo "Auditing $URL"
+          # Run lighthouse using npx
+          npx lighthouse $URL --output=json --output-path=./report.json --chrome-flags="--headless" --only-categories=performance,accessibility
+
+      - name: Extract Scores
+        id: scores
+        run: |
+          PERFORMANCE=$(jq '.categories.performance.score' report.json)
+          ACCESSIBILITY=$(jq '.categories.accessibility.score' report.json)
+          echo "Performance: $PERFORMANCE"
+          echo "Accessibility: $ACCESSIBILITY"
+
+          # Create JSON payload
+          echo "{\"performance\": $PERFORMANCE, \"accessibility\": $ACCESSIBILITY, \"timestamp\": \"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}" > score.json
+
+      - name: Update Gist
+        env:
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+        if: env.GH_TOKEN != '' && env.GIST_ID != ''
+        run: |
+          gh gist edit $GIST_ID -f lighthouse-score.json score.json

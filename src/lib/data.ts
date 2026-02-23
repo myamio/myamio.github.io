@@ -20,6 +20,10 @@ export interface SiteData {
     description: string;
     language: string;
   };
+  lighthouse?: {
+    gistId: string;
+    username: string;
+  };
 }
 
 export function getSiteData(): SiteData {

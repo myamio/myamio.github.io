@@ -1,0 +1,62 @@
+---
+import { getSiteData } from '../lib/data';
+
+const { lighthouse } = getSiteData();
+// Only render if configuration is present and not the default placeholder
+const shouldRender = lighthouse && lighthouse.gistId && lighthouse.gistId !== 'YOUR_GIST_ID';
+---
+
+{shouldRender && (
+  <div
+    id="lighthouse-widget"
+    data-gist-id={lighthouse.gistId}
+    data-username={lighthouse.username}
+    class="mt-4 flex justify-center gap-6 text-[10px] uppercase tracking-wider text-gray-400 opacity-0 transition-opacity duration-1000"
+  >
+    <div class="flex items-center gap-2">
+      <span>Performance</span>
+      <span id="score-perf" class="font-bold text-gray-600">--</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span>Accessibility</span>
+      <span id="score-a11y" class="font-bold text-gray-600">--</span>
+    </div>
+  </div>
+)}
+
+<script>
+  const widget = document.getElementById('lighthouse-widget');
+  if (widget && widget instanceof HTMLElement) {
+    const gistId = widget.dataset.gistId;
+    const username = widget.dataset.username;
+
+    // Cache busting to ensure fresh data
+    const url = `https://gist.githubusercontent.com/${username}/${gistId}/raw/lighthouse-score.json?t=${new Date().getTime()}`;
+
+    fetch(url)
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
+      })
+      .then(data => {
+        const perfEl = document.getElementById('score-perf');
+        const a11yEl = document.getElementById('score-a11y');
+
+        // Lighthouse scores are 0-1, so multiply by 100
+        if (perfEl && data.performance !== undefined) {
+            perfEl.textContent = Math.round(data.performance * 100).toString();
+        }
+        if (a11yEl && data.accessibility !== undefined) {
+            a11yEl.textContent = Math.round(data.accessibility * 100).toString();
+        }
+
+        // Fade in
+        widget.classList.remove('opacity-0');
+      })
+      .catch(err => {
+        console.debug('Lighthouse score fetch failed (likely not configured yet):', err);
+        // Keep hidden
+        widget.style.display = 'none';
+      });
+  }
+</script>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LinkCard from '../components/LinkCard.astro';
 import GameOfLife from '../components/GameOfLife.astro';
+import LighthouseScore from '../components/LighthouseScore.astro';
 import { Image } from 'astro:assets';
 import avatarImage from '../assets/avatar.png';
 import { getSiteData, type SiteData } from '../lib/data';
@@ -54,5 +55,6 @@ const { profile, links } = data;
 		<p class="text-xs text-gray-500">
 			&copy; {new Date().getFullYear()} {profile.name}. Built with Astro & Tailwind CSS.
 		</p>
+		<LighthouseScore />
 	</footer>
 </Layout>

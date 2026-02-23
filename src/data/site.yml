@@ -38,3 +38,7 @@ seo:
   title: "myamioポータル"
   description: "myamioのポートフォリオ兼ポータルサイト"
   language: "ja"
+
+lighthouse:
+  gistId: "YOUR_GIST_ID"
+  username: "YOUR_USERNAME"
