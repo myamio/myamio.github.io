@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import LinkCard from '../components/LinkCard.astro';
 import GameOfLife from '../components/GameOfLife.astro';
+import { Image } from 'astro:assets';
+import avatarImage from '../assets/avatar.png';
 import { getSiteData, type SiteData } from '../lib/data';
 
 const data: SiteData = getSiteData();
@@ -12,11 +14,13 @@ const { profile, links } = data;
 	<header class="mb-16 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
 		<div class="mb-6 sm:mb-0 sm:mr-8">
 			<div class="h-24 w-24 overflow-hidden rounded-full border border-gray-100 bg-gray-50 shadow-sm">
-				<img
-					src={profile.avatar}
+				<Image
+					src={avatarImage}
 					alt={profile.name}
+					width={192}
+					height={192}
+					loading="eager"
 					class="h-full w-full object-cover"
-					onerror="this.src='https://ui-avatars.com/api/?name=myamio&background=f3f4f6&color=374151'"
 				/>
 			</div>
 		</div>
