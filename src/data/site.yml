@@ -39,6 +39,11 @@ seo:
   description: "myamioのポートフォリオ兼ポータルサイト"
   language: "ja"
 
+# Lighthouse Score Widget Configuration
+# To enable:
+# 1. Create a public Gist with 'lighthouse-score.json' containing: {"performance": 0, "accessibility": 0}
+# 2. Add GIST_ID and GIST_TOKEN (with gist scope) to Repo Secrets.
+# 3. Fill in your details below:
 lighthouse:
   gistId: "YOUR_GIST_ID"
   username: "YOUR_USERNAME"
