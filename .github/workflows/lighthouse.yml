@@ -28,7 +28,7 @@ jobs:
           URL="${{ github.event.deployment_status.target_url || github.event.inputs.url }}"
           echo "Auditing $URL"
           # Run lighthouse using npx
-          npx lighthouse $URL --output=json --output-path=./report.json --chrome-flags="--headless" --only-categories=performance,accessibility
+          npx lighthouse $URL --preset=desktop --output=json --output-path=./report.json --chrome-flags="--headless" --only-categories=performance,accessibility
 
       - name: Extract Scores
         id: scores
