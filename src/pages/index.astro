@@ -8,7 +8,7 @@ import avatarImage from '../assets/avatar.png';
 import { getSiteData, type SiteData } from '../lib/data';
 
 const data: SiteData = getSiteData();
-const { profile, links } = data;
+const { profile, links, outputs } = data;
 ---
 
 <Layout>
@@ -41,11 +41,20 @@ const { profile, links } = data;
 			</div>
 		</section>
 
-		<section>
-			<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Links & Projects</h2>
+		<section class="mb-16">
+			<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Links</h2>
 			<div class="grid gap-4 sm:grid-cols-1">
 				{links.map((link) => (
 					<LinkCard {...link} />
+				))}
+			</div>
+		</section>
+
+		<section>
+			<h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Outputs</h2>
+			<div class="grid gap-4 sm:grid-cols-1">
+				{outputs.map((output) => (
+					<LinkCard {...output} />
 				))}
 			</div>
 		</section>
