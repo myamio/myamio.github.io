@@ -4,6 +4,12 @@ profile:
   intro: "ステートレスな設計を好むフルスタックエンジニアです。"
   avatar: "/avatar.png"
 
+outputs:
+  - title: "AIに書き換えられる前提で、今エンジニアが問うべき唯一の質問 〜1年後のための実装は、もはや技術的負債である〜"
+    url: "https://zenn.dev/myamio/books/ai-era-software-design"
+    description: "Zenn Book"
+    icon: "book"
+
 links:
   - title: "GitHub"
     url: "https://github.com/myamio"

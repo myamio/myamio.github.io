@@ -15,6 +15,12 @@ export interface SiteData {
     description: string;
     icon: string;
   }[];
+  outputs: {
+    title: string;
+    url: string | null;
+    description: string;
+    icon: string;
+  }[];
   seo: {
     title: string;
     description: string;
