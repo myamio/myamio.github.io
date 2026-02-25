@@ -8,7 +8,7 @@ myamioのエンジニアポートフォリオ兼ポータルサイトです。
 - Deployment: GitHub Pages (GitHub Actions)
 
 ## 設計思想
-- Stateless & Minimalist
+- ステートレス
 - メンテナンス性（YAMLでのコンテンツ管理）
 
 ## 開発方法
