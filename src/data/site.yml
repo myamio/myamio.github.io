@@ -1,12 +1,16 @@
 profile:
   name: "myamio"
   title: "Full Stack Engineer"
-  intro: "ステートレスな設計を実験するエンジニアです。"
+  intro: "ステートレスな開発を実験するエンジニアです。"
   avatar: "/avatar.png"
 
 outputs:
   - title: "AIに書き換えられる前提で、今エンジニアが問うべき唯一の質問 〜1年後のための実装は、もはや技術的負債である〜"
     url: "https://zenn.dev/myamio/books/ai-era-software-design"
+    description: "Zenn Book"
+    icon: "book"
+  - title: "AIによる認知負荷"
+    url: "https://zenn.dev/myamio/books/ai-induced-cognitive-load"
     description: "Zenn Book"
     icon: "book"
 
@@ -21,7 +25,7 @@ links:
     icon: "zenn"
   - title: "Qiita"
     url: "https://qiita.com/myamio"
-    description: "主に技術に関すること"
+    description: "主に技術に関すること（Zennとは違うものを）"
     icon: "qiita"
   - title: "note"
     url: "https://note.com/myamio"
@@ -45,11 +49,6 @@ seo:
   description: "myamioのポートフォリオ兼ポータルサイト"
   language: "ja"
 
-# Lighthouse Score Widget Configuration
-# To enable:
-# 1. Create a public Gist with 'lighthouse-score.json' containing: {"performance": 0, "accessibility": 0}
-# 2. Add GIST_ID and GIST_TOKEN (with gist scope) to Repo Secrets.
-# 3. Fill in your details below:
 lighthouse:
   gistId: "9e8a34aa32e1b990d8b416f77b8649c5"
   username: "myamio"
