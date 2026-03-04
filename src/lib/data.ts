@@ -27,7 +27,7 @@ export interface SiteData {
     description: string;
     language: string;
   };
-  lighthouse?: {
+  gist?: {
     gistId: string;
     username: string;
   };

@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/js-yaml": "^4.0.9"
+    "@types/js-yaml": "^4.0.9",
+    "rss-parser": "^3.13.0"
   }
 }

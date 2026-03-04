@@ -1,9 +1,14 @@
 ---
+import { getSiteData } from '../lib/data';
+
 interface Props {
   rssUrl: string;
+  icon: string;
 }
 
-const { rssUrl } = Astro.props;
+const { rssUrl, icon } = Astro.props;
+const { gist } = getSiteData();
+
 // Generate a unique ID to avoid collisions when multiple components are rendered
 const uniqueId = `rss-${Math.random().toString(36).substring(2, 11)}`;
 ---
@@ -15,15 +20,26 @@ const uniqueId = `rss-${Math.random().toString(36).substring(2, 11)}`;
   </a>
 </div>
 
-<script define:vars={{ rssUrl, uniqueId }}>
+<script define:vars={{ icon, uniqueId, gistId: gist?.gistId, username: gist?.username }}>
   (async function() {
-    try {
-      const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
-      if (!response.ok) return;
-      const data = await response.json();
-      if (data.status !== 'ok' || !data.items || data.items.length === 0) return;
+    if (!gistId || gistId === 'YOUR_GIST_ID') return;
 
-      const latestItem = data.items[0];
+    try {
+      // Use cache-busting slightly by using the current hour (GitHub Gist cache is about 5 mins anyway)
+      // We don't want to bust cache completely to avoid hitting raw.githubusercontent.com rate limits too fast
+      // But we also want to eventually get fresh data.
+      const date = new Date();
+      const cacheBuster = `${date.getFullYear()}${date.getMonth()}${date.getDate()}${date.getHours()}`;
+      const url = `https://gist.githubusercontent.com/${username}/${gistId}/raw/rss-feed.json?t=${cacheBuster}`;
+
+      const response = await fetch(url);
+      if (!response.ok) return;
+
+      const data = await response.json();
+      const latestItem = data[icon];
+
+      if (!latestItem || !latestItem.link || !latestItem.title) return;
+
       const container = document.getElementById(uniqueId);
       const link = container?.querySelector('.rss-link');
 
