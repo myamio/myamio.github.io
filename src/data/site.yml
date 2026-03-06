@@ -23,6 +23,7 @@ links:
     url: "https://myamio.pages.dev/"
     description: "ベータ版"
     icon: "blog"
+    rssUrl: "https://myamio.pages.dev/rss.xml"
   - title: "Zenn"
     url: "https://zenn.dev/myamio"
     description: "主に技術に関すること"
