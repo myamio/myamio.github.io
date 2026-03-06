@@ -3,18 +3,21 @@
 myamioポータルサイトです。
 
 ## 技術スタック
-- Framework: Astro (latest)
+
+- Framework: Astro
 - Styling: Tailwind CSS v4
-- Deployment: GitHub Pages (GitHub Actions)
+- Data: js-yaml, rss-parser
 
 ## 開発方法
 
 - npm install
 - npm run dev
 
-## デプロイ
+## GitHub Actions (自動化)
 
-main ブランチにプッシュされると GitHub Actions により自動的にデプロイされます。
+- **Deploy**: GitHub Pagesへの自動デプロイ
+- **Fetch RSS**: RSSフィードの定期取得
+- **Lighthouse**: Lighthouseスコアの定期計測
 
 ## カスタマイズ
 
