@@ -1,15 +1,11 @@
 # myamioポータル
 
-myamioのエンジニアポートフォリオ兼ポータルサイトです。
+myamioポータルサイトです。
 
 ## 技術スタック
 - Framework: Astro (latest)
 - Styling: Tailwind CSS v4
 - Deployment: GitHub Pages (GitHub Actions)
-
-## 設計思想
-- ステートレス
-- メンテナンス性（YAMLでのコンテンツ管理）
 
 ## 開発方法
 
