@@ -13,6 +13,10 @@ outputs:
     url: "https://zenn.dev/myamio/books/ai-induced-cognitive-load"
     description: "Zenn Book"
     icon: "book"
+  - title: "AIによる認知負荷（PDF版）"
+    url: "https://note.com/myamio/n/n1946d5983cf8"
+    description: "note"
+    icon: "book"
 
 links:
   - title: "GitHub"
