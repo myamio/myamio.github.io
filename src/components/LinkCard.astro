@@ -1,5 +1,4 @@
 ---
-import RssFeedItem from './RssFeedItem.astro';
 import Icon from './icons/Icon.astro';
 
 interface Props {
@@ -7,10 +6,9 @@ interface Props {
 	url: string | null;
 	description: string;
 	icon: string;
-	rssUrl?: string;
 }
 
-const { title, url, description, icon, rssUrl } = Astro.props;
+const { title, url, description, icon } = Astro.props;
 const isLink = url !== null;
 ---
 
@@ -32,7 +30,6 @@ const isLink = url !== null;
 		<div class="flex-1 min-w-0">
 			<h3 class="font-bold text-gray-900 dark:text-gray-100 truncate">{title}</h3>
 			<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed truncate">{description}</p>
-			{rssUrl && <RssFeedItem rssUrl={rssUrl} icon={icon} />}
 		</div>
 	</div>
 </div>

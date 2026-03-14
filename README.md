@@ -6,7 +6,7 @@ myamioポータルサイトです。
 
 - Framework: Astro
 - Styling: Tailwind CSS v4
-- Data: js-yaml, rss-parser
+- Data: js-yaml
 
 ## 開発方法
 
@@ -16,8 +16,6 @@ myamioポータルサイトです。
 ## GitHub Actions (自動化)
 
 - **Deploy**: GitHub Pagesへの自動デプロイ
-- **Fetch RSS**: RSSフィードの定期取得
-- **Lighthouse**: Lighthouseスコアの定期計測
 
 ## カスタマイズ
 
