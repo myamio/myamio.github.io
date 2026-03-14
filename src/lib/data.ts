@@ -14,7 +14,6 @@ export interface SiteData {
     url: string | null;
     description: string;
     icon: string;
-    rssUrl?: string;
   }[];
   outputs: {
     title: string;
@@ -26,10 +25,6 @@ export interface SiteData {
     title: string;
     description: string;
     language: string;
-  };
-  gist?: {
-    gistId: string;
-    username: string;
   };
 }
 
