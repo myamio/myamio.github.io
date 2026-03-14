@@ -5,11 +5,14 @@ profile:
   avatar: "/avatar.png"
 
 links:
-  - title: "myamio Blog"
+  - title: "myamioブログ"
     url: "https://myamio.pages.dev/"
     description: "ベータ版です。"
     icon: "blog"
-    rssUrl: "https://myamio.pages.dev/rss.xml"
+  - title: "myamioトピック"
+    url: "https://myamio.pages.dev/topic/"
+    description: "ベータ版です。"
+    icon: "blog"
   - title: "note"
     url: "https://note.com/myamio"
     description: "何かを解決するようなこと"
