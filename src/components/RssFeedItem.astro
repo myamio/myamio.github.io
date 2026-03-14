@@ -43,7 +43,9 @@ const uniqueId = `rss-${crypto.randomUUID()}`;
       const container = document.getElementById(uniqueId);
       const link = container?.querySelector('.rss-link');
 
-      if (container && link) {
+      const isSecureUrl = latestItem.link.startsWith('http://') || latestItem.link.startsWith('https://');
+
+      if (container && link && isSecureUrl) {
         link.href = latestItem.link;
         link.textContent = latestItem.title;
         container.classList.remove('hidden');
