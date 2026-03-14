@@ -33,8 +33,14 @@ export interface SiteData {
   };
 }
 
+let cachedSiteData: SiteData | null = null;
+
 export function getSiteData(): SiteData {
+  if (cachedSiteData) {
+    return cachedSiteData;
+  }
   const filePath = path.join(process.cwd(), 'src/data/site.yml');
   const fileContents = fs.readFileSync(filePath, 'utf8');
-  return yaml.load(fileContents) as SiteData;
+  cachedSiteData = yaml.load(fileContents) as SiteData;
+  return cachedSiteData;
 }
