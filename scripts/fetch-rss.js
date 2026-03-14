@@ -12,8 +12,9 @@ async function main() {
 
   const rssData = {};
 
-  for (const link of siteData.links) {
-    if (link.rssUrl) {
+  const fetchPromises = siteData.links
+    .filter(link => link.rssUrl)
+    .map(async (link) => {
       try {
         console.log(`Fetching RSS for ${link.icon}: ${link.rssUrl}`);
         const feed = await parser.parseURL(link.rssUrl);
@@ -30,8 +31,9 @@ async function main() {
       } catch (error) {
         console.error(`❌ Failed to fetch RSS for ${link.icon}:`, error.message);
       }
-    }
-  }
+    });
+
+  await Promise.all(fetchPromises);
 
   const outputPath = path.join(process.cwd(), 'rss-feed.json');
   fs.writeFileSync(outputPath, JSON.stringify(rssData, null, 2));
