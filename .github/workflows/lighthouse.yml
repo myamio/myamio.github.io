@@ -24,11 +24,12 @@ jobs:
 
       - name: Run Lighthouse
         id: lighthouse
+        env:
+          TARGET_URL: ${{ github.event.deployment_status.target_url || github.event.inputs.url }}
         run: |
-          URL="${{ github.event.deployment_status.target_url || github.event.inputs.url }}"
-          echo "Auditing $URL"
+          echo "Auditing $TARGET_URL"
           # Run lighthouse using npx
-          npx lighthouse $URL --preset=desktop --output=json --output-path=./report.json --chrome-flags="--headless" --only-categories=performance,accessibility
+          npx lighthouse "$TARGET_URL" --preset=desktop --output=json --output-path=./report.json --chrome-flags="--headless" --only-categories=performance,accessibility
 
       - name: Extract Scores
         id: scores
