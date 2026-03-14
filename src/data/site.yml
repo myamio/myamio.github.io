@@ -22,10 +22,6 @@ links:
     url: "https://myamio.booth.pm/"
     description: "実務につながる実用パッチの提供"
     icon: "booth"
-  - title: "Zenn"
-    url: "https://zenn.dev/myamio"
-    description: "技術に関すること"
-    icon: "zenn"
 
 outputs:
   - title: "AIに書き換えられる前提で、今エンジニアが問うべき唯一の質問 〜1年後のための実装は、もはや技術的負債である〜"
