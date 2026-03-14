@@ -11,10 +11,10 @@ const { profile, links, outputs } = data;
 ---
 
 <Layout>
-	<div class="snap-y snap-mandatory h-screen w-full overflow-y-scroll overflow-x-hidden scroll-smooth scrollbar-hide">
+	<div class="snap-y snap-mandatory h-dvh w-full overflow-y-scroll overflow-x-hidden scroll-smooth scrollbar-hide">
 
 		<!-- Section 1: Profile & GameOfLife -->
-		<section class="snap-start min-h-screen flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
+		<section class="snap-start min-h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
 			<header class="mb-12 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
 				<div class="mb-6 sm:mb-0 sm:mr-8 flex-shrink-0">
 					<div class="h-24 w-24 overflow-hidden rounded-full border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 shadow-sm">
@@ -55,7 +55,7 @@ const { profile, links, outputs } = data;
 		</section>
 
 		<!-- Section 2: Links -->
-		<section class="snap-start min-h-screen flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
+		<section class="snap-start min-h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
 			<h2 class="mb-8 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">Links</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
 				{links.map((link) => (
@@ -65,7 +65,7 @@ const { profile, links, outputs } = data;
 		</section>
 
 		<!-- Section 3: Outputs & Footer -->
-		<section class="snap-start min-h-screen flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
+		<section class="snap-start min-h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
 			<div class="flex-1 flex flex-col justify-center">
 				<h2 class="mb-8 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">Outputs</h2>
 				<div class="grid gap-4 sm:grid-cols-2">
