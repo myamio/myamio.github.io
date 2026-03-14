@@ -10,7 +10,7 @@ const { rssUrl, icon } = Astro.props;
 const { gist } = getSiteData();
 
 // Generate a unique ID to avoid collisions when multiple components are rendered
-const uniqueId = `rss-${Math.random().toString(36).substring(2, 11)}`;
+const uniqueId = `rss-${crypto.randomUUID()}`;
 ---
 
 <div id={uniqueId} class="mt-3 text-sm hidden relative z-10">
