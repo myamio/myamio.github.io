@@ -9,6 +9,7 @@ links:
     url: "https://myamio.pages.dev/"
     description: "ベータ版です。"
     icon: "blog"
+    rssUrl: "https://myamio.pages.dev/rss.xml"
   - title: "myamioトピック"
     url: "https://myamio.pages.dev/topic/"
     description: "ベータ版です。"
