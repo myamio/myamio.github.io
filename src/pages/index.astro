@@ -12,7 +12,7 @@ const { profile, links, outputs } = data;
 ---
 
 <Layout>
-	<div class="snap-y snap-mandatory h-screen w-full overflow-y-scroll overflow-x-hidden scroll-smooth">
+	<div class="snap-y snap-mandatory h-screen w-full overflow-y-scroll overflow-x-hidden scroll-smooth scrollbar-hide">
 
 		<!-- Section 1: Profile & GameOfLife -->
 		<section class="snap-start min-h-screen flex flex-col justify-center py-12 section-fade">
@@ -91,19 +91,14 @@ const { profile, links, outputs } = data;
 </Layout>
 
 <style>
-	/* Custom scrollbar for webkit to keep it clean */
+	/* Hide scrollbar for Chrome, Safari and Opera */
 	.snap-y::-webkit-scrollbar {
-		width: 6px;
+		display: none;
 	}
-	.snap-y::-webkit-scrollbar-track {
-		background: transparent;
-	}
-	.snap-y::-webkit-scrollbar-thumb {
-		background-color: rgba(156, 163, 175, 0.5);
-		border-radius: 20px;
-	}
-	:global(.dark) .snap-y::-webkit-scrollbar-thumb {
-		background-color: rgba(75, 85, 99, 0.5);
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.scrollbar-hide {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
 	}
 
 	/* Simple fade-in effect for sections when scrolling */
