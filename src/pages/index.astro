@@ -14,8 +14,30 @@ const { profile, links, outputs } = data;
 	<div class="snap-y snap-mandatory h-dvh w-full overflow-y-scroll overflow-x-hidden scroll-smooth scrollbar-hide">
 
 		<!-- Section 1: Profile & GameOfLife -->
-		<section class="snap-start min-h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
-			<header class="mb-12 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
+		<section class="snap-start min-h-dvh flex flex-col pt-6 pb-12 section-fade w-full max-w-4xl mx-auto px-6 relative">
+			<!-- Site Header (Top) -->
+			<header class="w-full relative z-50 mb-auto pb-4 border-b border-transparent">
+				<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
+					<div class="flex flex-row items-center justify-between">
+						<div>
+							<a href="/" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex items-center gap-2">
+								myamio
+								<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-sm px-2.5 py-0.5 rounded-md font-medium">ポータル</span>
+							</a>
+						</div>
+					</div>
+					<div class="flex items-center w-auto">
+						<nav class="flex items-center gap-4">
+								<a href="https://myamio.pages.dev/" target="_blank" rel="noopener noreferrer" class="bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-900/50 text-sm font-medium px-3 py-1 rounded-md transition-colors">ブログ</a>
+								<a href="https://myamio.pages.dev/topic" target="_blank" rel="noopener noreferrer" class="bg-blue-100 dark:bg-blue-900/30 text-blue-500 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 text-sm font-medium px-3 py-1 rounded-md transition-colors">トピック</a>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<!-- Profile Content (Centered) -->
+			<div class="flex-1 flex flex-col justify-center py-12">
+				<div class="mb-12 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
 				<div class="mb-6 sm:mb-0 sm:mr-8 flex-shrink-0">
 					<div class="h-24 w-24 overflow-hidden rounded-full border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 shadow-sm">
 						<Image
@@ -45,12 +67,13 @@ const { profile, links, outputs } = data;
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6 0h2.454l-5.36 6.142L16 16h-4.937l-3.867-5.07L2.772 16H.316l5.733-6.57L0 0h5.063l3.495 4.633L12.6 0zm-.86 14.713h1.359L4.354 1.248H2.896l8.844 13.465z"/></svg>
 					</a>
 				</div>
-			</header>
+			</div>
 
 			<div class="w-full">
 				<div class="h-48 sm:h-64 w-full overflow-hidden rounded-lg border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800">
 					<GameOfLife />
 				</div>
+			</div>
 			</div>
 		</section>
 
