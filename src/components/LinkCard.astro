@@ -12,7 +12,7 @@ const { title, url, description, icon } = Astro.props;
 const isLink = url !== null;
 ---
 
-<div class="group relative block rounded-lg border border-gray-200 dark:border-gray-800 p-6 transition-all hover:border-black dark:hover:border-gray-400 hover:shadow-sm min-h-[120px] flex flex-col justify-center">
+<div class="group relative block rounded-lg border border-gray-200 dark:border-gray-800 p-4 transition-all hover:border-black dark:hover:border-gray-400 hover:shadow-sm min-h-[80px] flex flex-col justify-center">
 	{isLink ? (
 		<a href={url} target="_blank" rel="noopener noreferrer" class="absolute inset-0">
 			<span class="sr-only">{title}</span>
@@ -23,7 +23,7 @@ const isLink = url !== null;
 		</span>
 	)}
 
-	<div class="flex items-center space-x-4">
+	<div class="flex items-center space-x-3">
 		<div class="flex-shrink-0 text-gray-700 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
 			<Icon name={icon} />
 		</div>
