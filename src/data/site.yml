@@ -6,11 +6,11 @@ profile:
 
 links:
   - title: "myamioブログ"
-    url: "https://myamio.pages.dev/"
+    url: "https://myamio.coolis.jp/"
     description: "技術に関すること"
     icon: "blog"
   - title: "myamioトピック"
-    url: "https://myamio.pages.dev/topic/"
+    url: "https://myamio.coolis.jp/topic/"
     description: "技術以外に関すること"
     icon: "blog"
   - title: "365日の格言"
@@ -23,7 +23,7 @@ links:
     icon: "note"
   - title: "BOOTH"
     url: "https://myamio.booth.pm/"
-    description: "実務につながる実用パッチの提供"
+    description: "実務につながるパッチ提供"
     icon: "booth"
 
 outputs:
