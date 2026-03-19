@@ -22,14 +22,14 @@ const { profile, links, outputs } = data;
 						<div>
 							<a href="/" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex items-center gap-2">
 								myamio
-								<span class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white text-xl px-2.5 py-0.5 rounded-md font-bold">ポータル</span>
+								<span class="bg-gray-100 dark:bg-gray-800 text-black dark:text-white text-xl px-2.5 py-0.5 rounded-md font-bold">ポータル</span>
 							</a>
 						</div>
 					</div>
-					<div class="flex items-center w-auto">
+					<div class="hidden md:flex items-center w-auto">
 						<nav class="flex items-center gap-4">
 								<a href="https://myamio.coolis.jp/" target="_blank" rel="noopener noreferrer" class="bg-orange-100 dark:bg-orange-900/30 text-black dark:text-white hover:bg-orange-200 dark:hover:bg-orange-900/50 text-xs font-medium px-3 py-1 rounded-md transition-colors">ブログ</a>
-								<a href="https://myamio.coolis.jp/topic" tatext-black dark:text-whiterget="_blank" rel="noopener noreferrer" class="bg-blue-100 dark:bg-blue-900/30 text-black dark:text-white hover:bg-blue-200 dark:hover:bg-blue-900/50 text-xs font-medium px-3 py-1 rounded-md transition-colors">トピック</a>
+								<a href="https://myamio.coolis.jp/topic" target="_blank" rel="noopener noreferrer" class="bg-blue-100 dark:bg-blue-900/30 text-black dark:text-white hover:bg-blue-200 dark:hover:bg-blue-900/50 text-xs font-medium px-3 py-1 rounded-md transition-colors">トピック</a>
 						</nav>
 					</div>
 				</div>
@@ -103,6 +103,13 @@ const { profile, links, outputs } = data;
 			</div>
 
 			<footer class="mt-auto pt-16 pb-8 text-center">
+				<div class="md:hidden mb-6 flex flex-col items-center gap-2">
+					<span class="text-gray-900 dark:text-gray-100 font-bold">myamio</span>
+					<nav class="flex items-center gap-4">
+							<a href="https://myamio.coolis.jp/" target="_blank" rel="noopener noreferrer" class="bg-orange-100 dark:bg-orange-900/30 text-black dark:text-white hover:bg-orange-200 dark:hover:bg-orange-900/50 text-xs font-medium px-3 py-1 rounded-md transition-colors">ブログ</a>
+							<a href="https://myamio.coolis.jp/topic" target="_blank" rel="noopener noreferrer" class="bg-blue-100 dark:bg-blue-900/30 text-black dark:text-white hover:bg-blue-200 dark:hover:bg-blue-900/50 text-xs font-medium px-3 py-1 rounded-md transition-colors">トピック</a>
+					</nav>
+				</div>
 				<p class="text-xs text-gray-500 dark:text-gray-400 flex items-center justify-center gap-1.5 flex-wrap">
 					&copy; {new Date().getFullYear()} {profile.name}. Built with
 					<svg class="h-4 w-4 mx-1" viewBox="0 0 256 342" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M72.094 286.974c0 30.158 55.433 54.605 123.824 54.605 21.092 0 40.94-2.887 58.267-8.086-42.361-9.585-78.031-29.472-100.957-54.809-17.525-19.373-28.528-41.974-32.063-65.419-4.881 12.378-8.868 25.409-11.854 39.023a100.597 100.597 0 0 0-3.664 26.262 100.224 100.224 0 0 0 .783 12.554c-13.844-1.39-24.336-3.83-34.336-4.13zM153.254 36.969L43.896 242.045c-15.58 29.232 4.49 46.541 34.029 46.541 29.54 0 63.858-15.541 78.58-45.748l15.932-32.656a23.116 23.116 0 0 0 20.672 13.064c12.766 0 23.115-10.334 23.115-23.085 0-.441-.013-.88-.037-1.317l.034-.066-62.967-161.81zM114.659.395c-9.176 0-17.202 5.56-20.686 14.12l-10.236 25.132 50.81 130.59 18.067-37.03C132.868 94.625 119.531 34.793 119.531 34.793c-2.327-6.261-6.108-14.717-10.364-23.703a110.151 110.151 0 0 0 5.492-10.695Z"/></svg>
