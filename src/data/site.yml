@@ -10,7 +10,7 @@ links:
     description: "技術に関すること"
     icon: "blog"
   - title: "myamioトピック"
-    url: "https://myamio.coolis.jp/topic/"
+    url: "https://myamio.coolis.jp/topic"
     description: "技術以外に関すること"
     icon: "blog"
   - title: "365日の格言"
