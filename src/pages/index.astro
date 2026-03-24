@@ -116,6 +116,13 @@ const { profile, links, outputs } = data;
 		</section>
 
 	</div>
+
+	<!-- Scroll Indicator -->
+	<div class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3 pointer-events-none" aria-hidden="true">
+		<div class="scroll-indicator w-1 h-8 rounded-full bg-gray-500 dark:bg-gray-400 transition-all duration-300"></div>
+		<div class="scroll-indicator w-1 h-3 rounded-full bg-gray-300 dark:bg-gray-700 opacity-50 transition-all duration-300"></div>
+		<div class="scroll-indicator w-1 h-3 rounded-full bg-gray-300 dark:bg-gray-700 opacity-50 transition-all duration-300"></div>
+	</div>
 </Layout>
 
 <style>
@@ -160,9 +167,48 @@ const { profile, links, outputs } = data;
 		});
 	}, observerOptions);
 
+	// Scroll indicator observer
+	const indicatorOptions = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.5 // Trigger when 50% of the section is visible
+	};
+
+	let activeIndex = 0;
+
+	const indicatorObserver = new IntersectionObserver((entries) => {
+		// Update active index based on which section is intersecting
+		let intersectingFound = false;
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const sectionIndex = Array.from(document.querySelectorAll('section')).indexOf(entry.target as HTMLElement);
+				if (sectionIndex !== -1) {
+					activeIndex = sectionIndex;
+					intersectingFound = true;
+				}
+			}
+		});
+
+		if (intersectingFound) {
+			const indicators = document.querySelectorAll('.scroll-indicator');
+			indicators.forEach((indicator, index) => {
+				if (index === activeIndex) {
+					indicator.className = 'scroll-indicator w-1 h-8 rounded-full bg-gray-500 dark:bg-gray-400 transition-all duration-300';
+				} else {
+					indicator.className = 'scroll-indicator w-1 h-3 rounded-full bg-gray-300 dark:bg-gray-700 opacity-50 transition-all duration-300';
+				}
+			});
+		}
+	}, indicatorOptions);
+
 	// Setup observer on client side
 	document.addEventListener('DOMContentLoaded', () => {
-		const sections = document.querySelectorAll('.section-fade');
-		sections.forEach(section => observer.observe(section));
+		const sections = document.querySelectorAll('section');
+		sections.forEach(section => {
+			if (section.classList.contains('section-fade')) {
+				observer.observe(section);
+			}
+			indicatorObserver.observe(section);
+		});
 	});
 </script>
