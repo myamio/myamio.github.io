@@ -9,7 +9,13 @@ export interface SiteData {
     intro: string;
     avatar: string;
   };
-  links: {
+  sites: {
+    title: string;
+    url: string | null;
+    description: string;
+    icon: string;
+  }[];
+  platforms: {
     title: string;
     url: string | null;
     description: string;

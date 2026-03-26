@@ -4,7 +4,7 @@ profile:
   intro: "フルスタックエンジニアとして活動しています。現在、「情報を溜め込まず、その場で生成する」というステートレスな開発スタイルを実験中です。システムも人も、多くのものを抱え込みすぎない「ステートレス・エンジニアリング」が、変化の多い今の時代に合っていると感じています。この身軽なアプローチに触れることが、皆様ご自身の抱える複雑な課題を解きほぐし、新たな視点を見つけるきっかけになればと考えています。"
   avatar: "/avatar.png"
 
-links:
+sites:
   - title: "myamioブログ"
     url: "https://myamio.coolis.jp/"
     description: "技術に関すること"
@@ -17,6 +17,8 @@ links:
     url: "https://daily-proverbs.netlify.app/"
     description: "日めくりカレンダー"
     icon: "project"
+
+platforms:
   - title: "note"
     url: "https://note.com/myamio"
     description: "何かを解決するようなこと"
