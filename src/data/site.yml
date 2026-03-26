@@ -7,26 +7,30 @@ profile:
 sites:
   - title: "myamioブログ"
     url: "https://myamio.coolis.jp/"
-    description: "技術に関すること"
+    description: "技術・エンジニアに関することを記事にしています。"
     icon: "blog"
   - title: "myamioトピック"
     url: "https://myamio.coolis.jp/topic"
-    description: "技術以外に関すること"
+    description: "技術以外の私が興味を持ったことを記事にしています。"
     icon: "blog"
   - title: "365日の格言"
     url: "https://daily-proverbs.netlify.app/"
-    description: "日めくりカレンダー"
+    description: "たまに気づきがある、日めくりカレンダーです。"
     icon: "project"
 
 platforms:
   - title: "note"
     url: "https://note.com/myamio"
-    description: "何かを解決するようなこと"
+    description: "何かを解決するようなことを発信しています。"
     icon: "note"
   - title: "BOOTH"
     url: "https://myamio.booth.pm/"
-    description: "実務につながるパッチ提供"
+    description: "実務につながるパッチを提供しています。"
     icon: "booth"
+  - title: "X"
+    url: "https://x.com/myaamioo"
+    description: "告知や独り言など不定期でポストしています。"
+    icon: "x"
 
 outputs:
   - title: "AIに書き換えられる前提で、今エンジニアが問うべき唯一の質問 〜1年後のための実装は、もはや技術的負債である〜"
@@ -44,6 +48,6 @@ outputs:
 
 seo:
   title: "myamioポータル"
-  description: "myamioのポータルサイト"
+  description: "myamioのポータルサイトです。作成したサイトやプラットフォームアカウントを確認できます。"
   language: "ja"
 
