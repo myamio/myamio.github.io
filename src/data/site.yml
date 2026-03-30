@@ -17,6 +17,10 @@ sites:
     url: "https://daily-proverbs.netlify.app/"
     description: "たまに気づきがある、日めくりカレンダーです。"
     icon: "project"
+  - title: "Tokyo Foodie Finder"
+    url: "https://tokyofoodiefinder.netlify.app/"
+    description: "厳選した東京のカレー、とんかつ、ラーメンのお店を地図で確認できます。"
+    icon: "project"
 
 platforms:
   - title: "note"
