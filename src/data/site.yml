@@ -21,6 +21,10 @@ sites:
     url: "https://tokyofoodiefinder.netlify.app/"
     description: "厳選した東京のカレー、とんかつ、ラーメンのお店を地図で確認できます。"
     icon: "project"
+  - title: "Tokyo Katsudon Finder"
+    url: "https://tokyokatsudonfinder.netlify.app/"
+    description: "東京でカツ丼を食べたい時に、富士そば、かつや、松のやの場所を地図で確認できます。"
+    icon: "project"
 
 platforms:
   - title: "note"
