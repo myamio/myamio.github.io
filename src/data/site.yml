@@ -25,6 +25,10 @@ sites:
     url: "https://tokyokatsudonfinder.netlify.app/"
     description: "東京でカツ丼を食べたい時に、富士そば、かつや、松のやの場所を地図で確認できます。"
     icon: "project"
+  - title: "Tokyo Groceries Finder"
+    url: "https://tokyogroceriesfinder.netlify.app/"
+    description: "東京の業スー、オーケー、ドンキの場所を地図で確認できます。"
+    icon: "project"
 
 platforms:
   - title: "note"
