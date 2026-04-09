@@ -57,6 +57,10 @@ outputs:
     url: "https://note.com/myamio/n/n1946d5983cf8"
     description: "note"
     icon: "book"
+  - title: "英語が話せない人ほど、うまくいく 〜インバウンド対応で伝わる英語に変わる考え方〜"
+    url: "https://www.amazon.co.jp/dp/B0DKFZLPX6"
+    description: "Amazon Kindle"
+    icon: "book"
 
 seo:
   title: "myamioポータル"
