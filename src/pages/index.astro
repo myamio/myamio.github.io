@@ -74,10 +74,10 @@ const { profile, sites, platforms, outputs } = data;
 		</section>
 
 		<!-- Section 2: Sites -->
-		<section class="snap-start h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
-			<div class="flex flex-col min-h-0 max-h-full w-full justify-center">
+		<section class="snap-start h-dvh flex flex-col py-12 section-fade w-full max-w-4xl mx-auto px-6">
+			<div class="flex flex-col min-h-0 max-h-full w-full justify-center my-auto">
 				<h2 class="mb-6 shrink-0 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">作成したサイト</h2>
-				<div class="overflow-y-auto min-h-0 scrollbar-hide w-full p-2 -m-2">
+				<div class="overflow-y-auto min-h-0 scrollbar-hide w-full p-2 -m-2 overscroll-auto">
 					<div class="grid gap-4 grid-cols-1 md:grid-cols-3">
 						{sites.map((site) => (
 							<LinkCard {...site} />
@@ -88,10 +88,10 @@ const { profile, sites, platforms, outputs } = data;
 		</section>
 
 		<!-- Section 3: Platforms -->
-		<section class="snap-start h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
-			<div class="flex flex-col min-h-0 max-h-full w-full justify-center">
+		<section class="snap-start h-dvh flex flex-col py-12 section-fade w-full max-w-4xl mx-auto px-6">
+			<div class="flex flex-col min-h-0 max-h-full w-full justify-center my-auto">
 				<h2 class="mb-6 shrink-0 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">プラットフォームアカウント</h2>
-				<div class="overflow-y-auto min-h-0 scrollbar-hide w-full p-2 -m-2">
+				<div class="overflow-y-auto min-h-0 scrollbar-hide w-full p-2 -m-2 overscroll-auto">
 					<div class="grid gap-4 grid-cols-1 md:grid-cols-3">
 						{platforms.map((platform) => (
 							<LinkCard {...platform} />
@@ -102,17 +102,19 @@ const { profile, sites, platforms, outputs } = data;
 		</section>
 
 		<!-- Section 4: Outputs & Footer -->
-		<section class="snap-start min-h-dvh flex flex-col justify-center py-12 section-fade w-full max-w-4xl mx-auto px-6">
-			<div class="flex-1 flex flex-col justify-center">
-				<h2 class="mb-8 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">アウトプット</h2>
-				<div class="grid gap-4 grid-cols-1 p-2 -m-2">
-					{outputs.map((output) => (
-						<LinkCard {...output} smallText={true} />
-					))}
+		<section class="snap-start h-dvh flex flex-col py-12 section-fade w-full max-w-4xl mx-auto px-6">
+			<div class="flex-1 flex flex-col min-h-0 w-full justify-center">
+				<h2 class="mb-8 shrink-0 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">アウトプット</h2>
+				<div class="overflow-y-auto min-h-0 scrollbar-hide w-full p-2 -m-2 overscroll-auto">
+					<div class="grid gap-4 grid-cols-1">
+						{outputs.map((output) => (
+							<LinkCard {...output} smallText={true} />
+						))}
+					</div>
 				</div>
 			</div>
 
-			<footer class="mt-auto pt-16 pb-8 text-center">
+			<footer class="mt-auto shrink-0 pt-16 pb-8 text-center">
 				<div class="md:hidden mb-6 flex flex-col items-center gap-2">
 					<span class="text-gray-900 dark:text-gray-100 font-bold">myamio</span>
 					<nav class="flex items-center gap-4">
