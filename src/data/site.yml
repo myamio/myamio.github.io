@@ -45,6 +45,10 @@ platforms:
     icon: "x"
 
 outputs:
+  - title: "何もできなかった日のための本"
+    url: "https://www.amazon.co.jp/dp/B0GWYFZQ2T"
+    description: "Amazon Kindle"
+    icon: "book"
   - title: "英語が話せない人ほど、うまくいく 〜インバウンド対応で伝わる英語に変わる考え方〜"
     url: "https://www.amazon.co.jp/dp/B0DKFZLPX6"
     description: "Amazon Kindle"
