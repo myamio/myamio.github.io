@@ -14,6 +14,7 @@ export interface SiteData {
     url: string | null;
     description: string;
     icon: string;
+    image?: string;
   }[];
   platforms: {
     title: string;
@@ -26,6 +27,9 @@ export interface SiteData {
     url: string | null;
     description: string;
     icon: string;
+    image?: string;
+    ogTitle?: string;
+    ogDescription?: string;
   }[];
   seo: {
     title: string;
