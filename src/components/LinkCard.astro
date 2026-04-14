@@ -7,30 +7,42 @@ interface Props {
 	description: string;
 	icon: string;
 	smallText?: boolean;
+	image?: string;
+	ogTitle?: string;
+	ogDescription?: string;
 }
 
-const { title, url, description, icon, smallText = false } = Astro.props;
+const { title, url, description, icon, smallText = false, image, ogTitle, ogDescription } = Astro.props;
 const isLink = url !== null;
+
+const displayTitle = ogTitle || title;
+const displayDescription = ogDescription || description;
 ---
 
-<div class="group relative block rounded-lg border border-gray-500 dark:border-gray-500 p-4 transition-all min-h-[80px] flex flex-col justify-center">
+<div class={`group relative block rounded-lg border border-gray-500 dark:border-gray-500 transition-all min-h-[80px] flex flex-col justify-center overflow-hidden ${image ? '' : 'p-4'}`}>
 	{isLink ? (
-		<a href={url} target="_blank" rel="noopener noreferrer" class="absolute inset-0">
-			<span class="sr-only">{title}</span>
+		<a href={url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10">
+			<span class="sr-only">{displayTitle}</span>
 		</a>
 	) : (
-		<span class={`absolute right-3 top-3 rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 font-medium text-gray-600 dark:text-gray-400 ${smallText ? 'text-[8px]' : 'text-[10px]'}`}>
+		<span class={`absolute right-3 top-3 z-10 rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 font-medium text-gray-600 dark:text-gray-400 ${smallText ? 'text-[8px]' : 'text-[10px]'}`}>
 			Coming Soon
 		</span>
 	)}
 
-	<div class="flex items-center space-x-3">
+	{image && (
+		<div class="w-full h-32 sm:h-40 overflow-hidden shrink-0">
+			<img src={image} alt={displayTitle} class="w-full h-full object-cover" loading="lazy" />
+		</div>
+	)}
+
+	<div class={`flex items-center space-x-3 ${image ? 'p-4' : ''}`}>
 		<div class="flex-shrink-0 text-gray-700 dark:text-gray-400 transition-colors">
 			<Icon name={icon} />
 		</div>
 		<div class="flex-1 min-w-0">
-			<h3 class={`font-bold text-gray-900 dark:text-gray-100 line-clamp-3 ${smallText ? 'text-xs' : ''}`}>{title}</h3>
-			<p class={`text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3 ${smallText ? 'text-[10px]' : 'text-sm'}`}>{description}</p>
+			<h3 class={`font-bold text-gray-900 dark:text-gray-100 line-clamp-3 ${smallText ? 'text-xs' : ''}`}>{displayTitle}</h3>
+			<p class={`text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3 ${smallText ? 'text-[10px]' : 'text-sm'}`}>{displayDescription}</p>
 		</div>
 	</div>
 </div>
