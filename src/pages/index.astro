@@ -111,9 +111,9 @@ const { profile, sites, platforms, outputs } = data;
 			<div class="flex flex-col w-full shrink-0 py-12">
 				<h2 class="mb-8 shrink-0 text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">アウトプット</h2>
 				<div class="w-full p-2 -m-2">
-					<div class="grid gap-4 grid-cols-1">
+					<div class="grid gap-4 grid-cols-1 md:grid-cols-2">
 						{outputs.map((output) => (
-							<LinkCard {...output} smallText={true} />
+							<LinkCard {...output} variant="ogp" />
 						))}
 					</div>
 				</div>
