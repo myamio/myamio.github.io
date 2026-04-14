@@ -10,16 +10,27 @@ interface Props {
 	image?: string;
 	ogTitle?: string;
 	ogDescription?: string;
+	variant?: 'default' | 'ogp';
 }
 
-const { title, url, description, icon, smallText = false, image, ogTitle, ogDescription } = Astro.props;
+const { title, url, description, icon, smallText = false, image, ogTitle, ogDescription, variant = 'default' } = Astro.props;
 const isLink = url !== null;
+const isOgp = variant === 'ogp';
 
-const displayTitle = ogTitle || title;
+const displayTitle = (isOgp) ? title : (ogTitle || title);
 const displayDescription = ogDescription || description;
+
+let domain = '';
+if (isOgp && url) {
+	try {
+		domain = new URL(url).hostname;
+	} catch (e) {
+		// ignore invalid URLs
+	}
+}
 ---
 
-<div class={`group relative block rounded-lg border border-gray-500 dark:border-gray-500 transition-all min-h-[80px] flex flex-col justify-center overflow-hidden ${image ? '' : 'p-4'}`}>
+<div class={`group relative block rounded-lg border border-gray-500 dark:border-gray-500 transition-all min-h-[80px] flex flex-col justify-center overflow-hidden ${(image || isOgp) ? '' : 'p-4'}`}>
 	{isLink ? (
 		<a href={url} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10">
 			<span class="sr-only">{displayTitle}</span>
@@ -30,19 +41,32 @@ const displayDescription = ogDescription || description;
 		</span>
 	)}
 
+	{isOgp && title && (
+		<span class="absolute left-3 top-3 z-10 rounded bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-2 py-0.5 font-bold text-gray-900 dark:text-gray-100 text-[10px] sm:text-xs shadow-sm">
+			{title}
+		</span>
+	)}
+
 	{image && (
-		<div class="w-full h-32 sm:h-40 overflow-hidden shrink-0">
-			<img src={image} alt={displayTitle} class="w-full h-full object-cover" loading="lazy" />
+		<div class={`w-full ${isOgp ? 'bg-gray-100 dark:bg-gray-800 h-40 sm:h-48' : 'h-32 sm:h-40'} overflow-hidden shrink-0 border-b border-gray-200 dark:border-gray-700`}>
+			<img src={image} alt={displayTitle} class={`w-full h-full ${isOgp ? 'object-contain' : 'object-cover'}`} loading="lazy" />
 		</div>
 	)}
 
-	<div class={`flex items-center space-x-3 ${image ? 'p-4' : ''}`}>
-		<div class="flex-shrink-0 text-gray-700 dark:text-gray-400 transition-colors">
-			<Icon name={icon} />
-		</div>
+	<div class={`flex items-center space-x-3 ${(image || isOgp) ? 'p-4' : ''}`}>
+		{!isOgp && (
+			<div class="flex-shrink-0 text-gray-700 dark:text-gray-400 transition-colors">
+				<Icon name={icon} />
+			</div>
+		)}
 		<div class="flex-1 min-w-0">
-			<h3 class={`font-bold text-gray-900 dark:text-gray-100 line-clamp-3 ${smallText ? 'text-xs' : ''}`}>{displayTitle}</h3>
-			<p class={`text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3 ${smallText ? 'text-[10px]' : 'text-sm'}`}>{displayDescription}</p>
+			{isOgp && domain && (
+				<p class="text-[10px] text-gray-500 dark:text-gray-400 mb-1 line-clamp-1">{domain}</p>
+			)}
+			{!isOgp && (
+				<h3 class={`font-bold text-gray-900 dark:text-gray-100 line-clamp-3 ${smallText ? 'text-xs' : ''}`}>{displayTitle}</h3>
+			)}
+			<p class={`text-gray-600 dark:text-gray-400 leading-relaxed ${isOgp ? 'line-clamp-2 text-xs' : 'line-clamp-3'} ${smallText && !isOgp ? 'text-[10px]' : (isOgp ? '' : 'text-sm')}`}>{displayDescription}</p>
 		</div>
 	</div>
 </div>
