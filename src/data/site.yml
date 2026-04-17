@@ -1,6 +1,6 @@
 profile:
-  name: "myamio"
-  title: "フルスタックエンジニア"
+  name: "myamio / みやみお"
+  title: "myamioは何をする人なのか？"
   intro: "フルスタックエンジニアとして活動しています。現在、「情報を溜め込まず、その場で生成する」というステートレスな開発スタイルを実験中です。システムも人も、多くのものを抱え込みすぎない「ステートレス・エンジニアリング」が、変化の多い今の時代に合っていると感じています。この身軽なアプローチに触れることが、皆様ご自身の抱える複雑な課題を解きほぐし、新たな視点を見つけるきっかけになればと考えています。"
   avatar: "/avatar.png"
 
@@ -41,10 +41,6 @@ platforms:
     url: "https://note.com/myamio"
     description: "何かを解決するようなことを発信しています。"
     icon: "note"
-  - title: "BOOTH"
-    url: "https://myamio.booth.pm/"
-    description: "実務につながるパッチを提供しています。"
-    icon: "booth"
   - title: "X"
     url: "https://x.com/myaamioo"
     description: "告知や独り言など不定期でポストしています。"
