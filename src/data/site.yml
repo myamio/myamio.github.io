@@ -1,16 +1,16 @@
 profile:
-  name: "myamio"
-  title: "myamioは何をする人なのか？"
+  name: "みやみお"
+  title: "みやみおは何をする人なのか？"
   intro: "フルスタックエンジニアとして活動しています。現在、「情報を溜め込まず、その場で生成する」という開発スタイルを実験中です。システムも人も、多くのものを抱え込みすぎない「ステートレス・エンジニアリング」が、変化の多い今の時代に合っていると感じています。この身軽なアプローチに触れることが、皆様ご自身の抱える複雑な課題を解きほぐし、新たな視点を見つけるきっかけになればと考えています。"
   avatar: "/avatar.jpg"
 
 sites:
-  - title: "myamioブログ"
+  - title: "みやみおブログ"
     url: "https://myamio.coolis.jp/"
     description: "技術・エンジニアに関することを記事にしています。"
     icon: "blog"
     image: "/images/sites/blog.png"
-  - title: "myamioトピック"
+  - title: "みやみおトピック"
     url: "https://myamio.coolis.jp/topic"
     description: "技術以外の私が興味を持ったことを記事にしています。"
     icon: "blog"
@@ -43,7 +43,7 @@ outputs:
     ogDescription: "Amazonでみやみおの英語が話せない人ほど、うまくいく: 〜インバウンド対応で伝わる英語に変わる考え方〜。アマゾンならポイント還元本が多数。一度購入いただいた電子書籍は、KindleおよびFire端末、スマートフォンやタブレットなど、様々な端末でもお楽しみいただけます。"
 
 seo:
-  title: "myamioポータル"
-  description: "myamioのポータルサイトです。作成したサイトやプラットフォームアカウントを確認できます。"
+  title: "みやみおポータル"
+  description: "みやみおのポータルサイトです。作成したサイトやプラットフォームアカウントを確認できます。"
   language: "ja"
 
