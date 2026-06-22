@@ -27,6 +27,14 @@ platforms:
     icon: "x"
 
 outputs:
+  - title: "システムづくりをアップデートする"
+    url: "https://www.amazon.co.jp/dp/B0H68TWM61"
+    description: "Amazon Kindle"
+    icon: "book"
+  - title: "ため込むのをやめたら、毎日が変わった"
+    url: "https://www.amazon.co.jp/dp/B0GZ5V7W76"
+    description: "Amazon Kindle"
+    icon: "book"
   - title: "何もできなかった日のための本"
     url: "https://www.amazon.co.jp/dp/B0GWYFZQ2T"
     description: "Amazon Kindle"
